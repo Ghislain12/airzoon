@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Page 404</title>
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  button {
+    background-color: #e03e1d;
+    border-radius: 5px;
+    border: 3px solid #e03e1d;
+    width: 50%;
+    padding: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  button a {
+    text-decoration: none;
+    display: block;
+    color: white;
+  }
+
+  @keyframes mymove {
+    0% {
+      top: 0px;
+    }
+
+    50% {
+      top: 30px
+    }
+
+    100% {
+      top: 0px;
+    }
+  }
+
+  .anim {
+    animation: mymove 5s infinite;
+    position: relative;
+    width: 60%;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .four {
+    color: #e03e1d;
+    font-size: 11em;
+
+  }
+
+  #texte {
+    margin: 0;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div id="animation">
+      <h1 class="four">4</h1>
+      <img src="airzoon2.png" class="anim" alt="">
+      <h1 class="four">4</h1>
+    </div>
+    <div id="texte" style=" margin-top: -50px;">
+      <p>La page que vous recherchez n'existe pas</p>
+      <button><a href="/" style="font-size: 17px;">Revenir sur la page d'acceuil</a></button>
+    </div>
+  </div>
+</body>
+
+</html>
