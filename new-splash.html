@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS avec HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-900 h-screen flex flex-col items-center justify-between w-full"
+  >
+    <header
+      class="bg-[#ED6A3D] p-4 text-white text-center h-28 w-full flex flex-row items-center justify-center"
+    >
+      <h1 class="text-2xl font-bold">Bienvenue à FORT SAVANE</h1>
+    </header>
+    <main class="flex-1 p-6 flex flex-row w-8/12 gap-8">
+      <div class="flex flex-col items-start w-2/3 gap-4">
+        <h1 class="font-bold text-xl">Qui sommes-nous?</h1>
+        <p class="text-justify">
+          Since 2013 this residence has been welcoming customers who have all
+          appreciated the calm, comfort and exceptional discretion of our
+          residence. In the city center of Fort de France, the Residence Fort
+          Savane offers you an ideal accommodation solution during your business
+          or personal trips. It is located on the very lively Rue de la Liberté,
+          opposite the emblematic 18th century garden, La Savane. Close to the
+          seafront, close to entertainment, shops, restaurants, all in a warm
+          and comfortable setting. The ferry terminal is within walking
+          distance. A taxi rank is present, just in front, too. This is where
+          throughout your stay, my team and I will bring you attention, help and
+          suggestions so that you live your experience in FORT-DE-FRANCE at 100%
+          and so that it remains unforgettable. To welcome you with kindness and
+          naturalness, to make sure that you feel good as soon as you walk
+          through the front door: this is our deepest desire. I wish you an
+          excellent stay with us in the heart of the city.
+        </p>
+      </div>
+      <div class="w-1/3">
+        <div class="flex flex-col items-start gap-2 w-full">
+          <label for="id" class="text-sm"
+            >Veuillez saisir votre code pour vous connecter</label
+          >
+          <input
+            type="text"
+            name="price"
+            id="price"
+            class="block w-full min-w-0 grow py-1.5 px-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 rounded"
+            placeholder=""
+          />
+          <button class="bg-[#ED6A3D] text-white p-2 rounded self-end">Connexion</button>
+        </div>
+      </div>
+    </main>
+    <footer class="text-center p-4 mt-6 border-t h-10">
+      <p class="text-sm">© 2025 Airzoon</p>
+    </footer>
+  </body>
+</html>
