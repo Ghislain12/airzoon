@@ -1,7 +1,7 @@
 # Airzoon
 
 ## Description
-Airzoon est un projet de portail captif pour fournir une connexion Wi-Fi aux utilisateurs. Il inclut des fonctionnalités telles que la connexion avec un code, des alertes météorologiques et des formulaires de consentement.
+La splash page de Airzoon est un projet de portail captif pour fournir une connexion Wi-Fi aux utilisateurs. Il inclut des fonctionnalités telles que la connexion avec un code, des alertes météorologiques et des formulaires de consentement.
 
 ## Structure du projet
 - `splash.html` : Page d'accueil principale avec des informations et des formulaires pour les utilisateurs.
