@@ -11,11 +11,11 @@ La splash page de Airzoon est un projet de portail captif pour fournir une conne
 - `404.html` : Page d'erreur 404 personnalisée.
 - `.gitignore` : Fichier pour ignorer les fichiers et dossiers spécifiques dans Git.
 
-## Installation (Linux)
+## Installation (Linux) (Cas 1)
 1. Cloner le dépôt :
     ```bash
     git clone https://github.com/votre-utilisateur/airzoon.git
-    cd airzoon
+    cd airzoon/Cas_1
     ```
 
 2. Créer et activer un environnement virtuel :
@@ -29,11 +29,11 @@ La splash page de Airzoon est un projet de portail captif pour fournir une conne
     pip install -r requirements.txt
     ```
 
-## Installation (Windows)
+## Installation (Windows) (Cas 1)
 1. Cloner le dépôt :
     ```bash
     git clone https://github.com/votre-utilisateur/airzoon.git
-    cd airzoon
+    cd airzoon/Cas_1
     ```
 
 2. Créer et activer un environnement virtuel :
