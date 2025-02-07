@@ -29,6 +29,24 @@ La splash page de Airzoon est un projet de portail captif pour fournir une conne
     pip install -r requirements.txt
     ```
 
+## Installation (Windows)
+1. Cloner le dépôt :
+    ```bash
+    git clone https://github.com/votre-utilisateur/airzoon.git
+    cd airzoon
+    ```
+
+2. Créer et activer un environnement virtuel :
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+
+3. Installer les dépendances :
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 ## Utilisation
 1. Lancer le serveur Flask :
     ```bash
