@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <title>$gatewayname</title>
+    <!--
+    <meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />-->
+    <!-- styles -->
+    <link href="https://s3.amazonaws.com/my-cloudtrax-files/ct4/316899/splashpage/1/file/stylesheet.css" rel="stylesheet">
+    <link href="https://s3.amazonaws.com/my-cloudtrax-files/ct4/316899/splashpage/1/file/responsive.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+    <!--<script async="" charset="utf-8" src="//v2.zopim.com/?1kToJmh24geKb1QtoW1wu0r6AhSPeEdH" type="text/javascript"></script>--><script type="text/javascript">
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if (e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
+    }
+</script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://airzoon.pro/script-form/b23534bb73ffa02d87fc83b62c6dfe46"></script>
+    <!--<script type="text/javascript" src="http://127.0.0.1:8000/script-form/b23534bb73ffa02d87fc83b62c6dfe46"></script>-->
+    <!--<script type="text/javascript" src="https://airzoon.pro/script-form/d3546183cc88ada1b3e12bc073027de7"></script>-->
+
+    <script type="text/javascript" src="https://airzoon.pro/assets/js/anotherWaiter.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            var showDisconnectionTime = function() {
+                var cTime = new Date();
+                cTime = cTime.getTime();
+                duration = 60 * 30 * 1000;
+                newDate = new Date(cTime + duration);
+                var cTime = newDate.getHours() + " h " + (newDate.getMinutes() < 10 ? "0" + newDate.getMinutes() : newDate.getMinutes());
+                $(".esurf").html("Votre connexion sera r&#233;initialis&#233;e dans 30 minutes &#224; " + cTime);
+                $(".esurf").css("color", "yellow");
+            }
+
+        });
+    </script>
+    <style>
+
+
+        .is-invalid
+        {
+            border:1px solid red;
+        }
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family:'Lato', sans-serif;
+        }
+        .center {
+            text-align:center;
+        }
+        .red {
+            color:#d9383e;
+        }
+        .bx-wrapper {
+            max-width:98% !important;
+            margin-bottom: 40px;
+        }
+        .bx-viewport {
+            margin-top: 5px;
+        }
+        .bxslider {
+            margin: 0 auto;
+            line-height: normal;
+        }
+        .bxslider li {
+            line-height:normal;
+        }
+        .bxslider li img {
+            margin:0 auto;
+        }
+        .bx-prev, .bx-next {
+            display:block !important;
+        }
+        .container {
+            width: 740px;
+            margin:auto;
+        }
+        .span8 {
+            width:250px;
+        }
+        @media (max-width: 767px) and (min-width: 1px) {
+            .container {
+                width: auto;
+                padding-left:15px;
+                padding-right:15px;
+            }
+            .span8 {
+                width:auto;
+            }
+            .span12 {
+                float:none;
+                width:90%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            .box1 {
+                width:90%;
+            }
+        }
+        @media (min-width: 768px) {
+            .box1 {
+                width:85.5%;
+            }
+            .box2 {
+                width:87%;
+            }
+        }
+
+        @media (max-width: 543px) {
+            #coverImg{width:100% !important;height:auto;}
+            #annonceImg
+            {
+                width:100% !important;height:auto;
+            }
+        }
+        .box1 {
+            border-radius:7px;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            border:3px solid #EE5A67;
+            background:#FAFAFA;
+            margin-bottom:20px;
+            padding:15px;
+        }
+        .box2 {
+            border-radius:7px;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            border: 1px solid #C7C7C7;
+            background:#FAFAFA;
+            margin-bottom:20px;
+            padding:15px;
+        }
+        #btn-surf-gratuit {
+            background: #ff0000 !important;
+            color: #e1fa08;
+            width: 100%;
+            padding: 20px;
+            text-shadow:none;
+            -moz-text-shadow:none;
+            -webkit-text-shadow:none;
+            font-family:inherit;
+        }
+        #rounded {
+            margin-bottom:9px;
+
+        }
+
+        #rounded img{
+
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+
+        }
+
+        #coverImg
+        {
+            width:500px;
+            height:auto;
+        }
+
+        #annonceImg
+        {
+            width:300px;height:auto;
+        }
+
+        #formDunamique label
+        {
+            display:block;
+            font-size:12px;
+            margin-bottom:4px;
+        }
+
+        #formDunamique input
+        {
+            height:16px;
+        }
+
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            /*background-color: #DC2C32;*/
+
+            margin: 15% auto;
+
+            /*border: 1px solid #888;*/
+            width: 300px; /* Could be more or less, depending on screen size */
+        }
+        #thePubPopIn
+        {
+            overflow:hidden;
+            width:300px;
+            height:250px;
+            position:relative;
+            cursor:pointer;
+        }
+        #thePubPopIn img
+        {
+            position:absolute;
+
+        }
+        .formAdsPopin {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.9);
+            opacity:0;
+        }
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .dNone
+        {
+            display:none;
+        }
+        .bold
+        {font-weight:bold;}
+        .tac{text-align:center;}
+
+        .warningcovid
+        {
+            font-weight:bold;font-size:13px;cursor:pointer;
+        }
+        #formCovidResto
+        {
+            margin-top:5px;
+        }
+        #formCovidResto input
+        {
+            width:290px;height:21px;margin-top:4px;
+        }
+
+        .boxFormCovid
+        {
+            width:90%;
+        }
+
+        .boxflcovid
+        {
+            float:left;
+            width:50%;
+        }
+        .clrcovid
+        {
+            clear:both;
+        }
+        #cbconsentcovid,#cbconsentmarket
+        {
+            width:auto !important;margin-top:0px !important;height:auto !important;
+        }
+
+        @media (max-width: 870px) {
+            .boxflcovid
+            {
+
+                width:100%;
+            }
+            .cvfield
+            {
+                width:100% !important;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .imgPicCovid
+            {
+                display:block !important;
+                margin:auto;margin-bottom:15px;
+            }
+            .boxFormCovid
+            {
+                width:300px;
+            }
+        }
+
+        /*sp unique ajout*/
+
+        #card-error {
+            color: rgb(105, 115, 134);
+            text-align: left;
+            font-size: 13px;
+            line-height: 17px;
+            margin-top: 12px;
+        }
+        #card-element {
+            border-radius: 4px 4px 0 0 ;
+            padding: 12px;
+            border: 1px solid rgba(50, 50, 93, 0.1);
+            height: 44px;
+            /*width: 100%;*/
+            background: white;
+        }
+        .tac{text-align:center;}
+        .tal{text-align:left;}
+        #formDunamique label
+        {
+            display:block;
+            font-size:12px;
+            margin-bottom:4px;
+        }
+
+        #formDunamique input
+        {
+            height:16px;
+        }
+
+        #invitCode
+        {
+            padding-top:23px;
+            text-align:center;
+            border-top:2px solid #cccccc;
+            border-bottom:2px solid #cccccc;
+            margin-bottom:10px;
+            font-size:9pt;
+        }
+        .invitGrey
+        {
+            border-radius: 7px;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            border: 1px solid #C7C7C7;
+            background: #FAFAFA;
+            margin-bottom: 20px;
+            padding: 20px;
+            font-size:9pt;
+            text-align:center;
+        }
+
+        .clickable{cursor:pointer;}
+
+
+
+        .customcb
+        {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+
+        }
+
+        .ccb_unchecked
+        {
+            background-color:#FFFFFF;
+            border:1px solid #CCCCCC;
+
+        }
+
+        .ccb_checked
+        {
+            background-color:#d9383e;
+            border:1px solid #000000;
+
+        }
+
+        .shortfield{width: 140px;}
+
+        #ue-mention {
+            display: none;
+        }
+
+        .ad-container {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            text-align: center;
+            display: none; /* Assurez-vous que ce style est bien appliqué */
+        }
+        .ad-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .ad-container a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container testdiv" style="margin-top: 20px;">
+    <!-- Add the following html image after the img banner of the partner :
+    <img style="vertical-align: bottom; border: 0px" src="http://www.airzoon.com/img/STICKER_03_shadow-200.png" width="54" alt="" />
+    -->
+    <img class="dNone"src="https://airzoon.pro/assets/img/simpleloader.gif"/>
+    <div id="rounded" style="text-align: center;">
+        <img id="coverImg"  alt="">&nbsp;&nbsp;<img style="vertical-align: bottom; border: 0px" src="http://www.airzoon.com/img/STICKER_03_shadow-200.png" width="54" height="70" alt="">
+            <div id="ue-mention">
+                <div>
+                    <img style="margin-right: 50px;" src="https://www.airzoon.com/wp-content/uploads/2024/07/image.png" width="95" height="66" alt="">
+                    <img style="" src="https://www.airzoon.com/wp-content/uploads/2024/07/image-2.png" width="95" height="66" alt="">
+                </div>
+                <div style="padding-left: 100px; padding-right: 100px; font-size: 9px;" id="ue-mention-content"></div>
+            </div>
+    </div>
+
+    <!-- TPL Logo -->
+    <div id="rounded" class="dNone classCovidRestoForm" style="text-align: center;">
+
+        <!--<img width="15" height="15" src="https://airzoon.pro/exclamation-mark.png" />--><img width="120" height="auto" class="warningcovid imgPicCovid" style="border-radius:0px !important;" src="https://airzoon.pro/assets/img/iconecovid-sp.png" /><br/> <span class="warningcovid">Cliquer ici pour remplir le formulaire Cas-Contact</span>
+        <div id="formCovidResto" class="dNone" >
+            <div class="box1 boxFormCovid span12" style="margin:auto;text-align:left;float:none;">
+                <h3 style="font-size:12px; line-height:18px">Notre établissement est soumis au respect d'un protocole sanitaire spécifique, qui prévoit le recueil d'informations vous concernant, dans le cadre de la lutte contre l'épidémie de COVID-19.
+                </h3>
+                <!-- This is the "Enter" button for "Open" networks. -->
+                <div class="boxflcovid">
+                    <form method="get">
+                        <script type="text/javascript">
+                            function strdate()
+                            {
+                                var months={0:"01",1:"02",2:"03",3:"04",4:"05",5:"06",6:"07",7:"08",8:"09",9:"10",10:"11",11:"12"};
+                                var days={0:"00",1:"01",2:"02",3:"03",4:"04",4:"05",6:"06",7:"07",8:"08",9:"09"};
+                                var theday=(new Date().getDate()<10?days[new Date().getDate()]:new Date().getDate());
+                                var thehour=(new Date().getHours()<10?days[new Date().getHours()]:new Date().getHours());
+
+                                var theminute=(new Date().getMinutes()<10?days[new Date().getMinutes()]:new Date().getMinutes());
+
+                                return theday+"/"+months[new Date().getMonth()]+"/"+new Date().getFullYear()+" à "+thehour+":"+theminute;
+
+                            }
+                        </script>
+                        <label>Date  : </label> <label class="bold"><script>document.write(strdate());</script></label><br/><br/>
+                        <label>Nom</label><br/>
+                        <input type="text" class="cvfield" id="nomclientcovid"/><br/><br/>
+                        <label>Prénom</label><br/>
+                        <input type="text" class="cvfield" id="prenomclientcovid"/><br/><br/>
+
+
+
+                        <label>Téléphone</label><br/>
+                        <input type="text" class="cvfield" id="phoneclientcovid"/><br/><br/>
+
+                        <label>Mail</label><br/>
+                        <input type="text" class="cvfield" id="mailclientcovid"/><br/><br/>
+                        <p style="font-size:10px;color:#575957;"><input id="cbconsentcovid"  type="checkbox" ischecked="no"/> Je consens à la collecte de mes données et à leur transmission, en cas de demande spécifique des autorités sanitaires compétentes dans le cadre de la recherche de « cas contacts ».
+                        </p>
+                        <p style="font-size:10px;color:#575957;"><input id="cbconsentmarket"  type="checkbox" ischecked="no"/> J'accepte de recevoir des offres promotionnelles de la part d'Airzoon et ses partenaires
+                        </p>
+                        <button class="button voucher-submit" id="submitresto" style="font-size:12px" type="button">Enregistrer</button>
+                        <div id="waitcovid"></div>
+
+
+
+
+                    </form>
+                </div>
+                <div id="infolegalcovid" class="boxflcovid">
+                    <p style="font-size:10px;color:#CCCCCC;margin-top:35px;">Les informations recueillies sur ce formulaire sont enregistrées et utilisées uniquement par notre établissement.<br/>
+                        Avec votre accord, vos données seront utilisées pour faciliter la recherche des « cas contacts » par les autorités sanitaires, et ne seront pas réutilisées à d'autres fins. Vous pouvez à tout moment retirer votre consentement.En cas de contamination de l'un des clients au moment de votre présence, ces informations pourront être communiquées aux autorités sanitaires compétentes (agents des CPAM, de l'assurance maladie et/ou de l'agence régionale de santé), afin de vous contacter et de vous indiquer le protocole sanitaire à suivre.<br/>
+                        Vos données seront conservées pendant 14 jours à compter de leur collecte, et seront supprimées à l'issue de ce délai.<br/>
+                        Vous pouvez accéder aux données vous concernant, les rectifier, demander leur effacement ou exercer votre droit à la limitation du traitement de vos données.  Vous pouvez également exercer votre droit à la portabilité sur vos données.<br/>
+                        Pour exercer ces droits ou pour toute question sur le traitement de vos données, vous pouvez écrire à <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80e3eff6e9e4b1b9e6eff2edc0e1e9f2daefefeeaee3efedae">[email&#160;protected]</a><br/>
+                        Si vous estimez, après nous avoir contactés, que vos droits Informatique et Libertés ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL.</p>
+
+                </div>
+                <br class="clrcovid"/>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <!-- Left Column -->
+    <div class="row">
+        <div class="span4">
+            <!-- TPL Titre texte -->
+            <h1><span style="font-size: 18pt;" id="titleClient">Bienvenue</span></h1>
+
+            <!-- /// TPL  MESSAGE free airZoon -->
+            <div id="strAccueilClient" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 19px; font-size: 10pt;">
+                ||paragrapheclient||
+
+                <!--<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 19px; font-size: 10pt;">La connexion WIFI vous est proposée gratuitement par Be Jungle et son partenaire airZoon. <b>Renseignez votre adresse email </b> pour naviguer sur Internet, la connexion est valable </span><span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 19px; color: red; font-size: 10pt;"><strong>30 minutes renouvelables sans limite.</strong></span>-->
+            </div><br>
+
+            <!-- /// TPL  MESSAGE TEXTE Voucher forcé
+            <div>La connexion WIFI vous est proposée gratuitement par <NOMDEPARTENAIRE> et son partenaire airZoon. Nous prions de  vous adresser au personnel de l'établissement afin d'obtenir un code d'accès<strong> </strong> à internet.</div><br>
+            ///////-->
+
+            <!-- Visuel colonne droite
+            <p><center><img src="http://visuel-annonce-sp-amodifier.jpg" width="320"></center></p>
+            -->
+            <!-- fin visuel colonne droite -->
+            <p><center><img id="annonceImg"></center></p>
+            <div id="questionnaire">
+
+            </div><br/>
+
+
+            <div><span style="font-size: 10pt;" id="strConclusionClient">Toute notre équipe vous souhaite un excellent moment parmi nous.&nbsp;</span><span style="font-size: 10pt;">&nbsp;</span></div>
+            <div>&nbsp;</div>
+            <div style="text-align: center; "><img src="http://airzoon.com/img/iconfacebook30.jpg" width="30" height="30" alt="">&nbsp; <strong>airZoon WIFI</strong></div>
+            <div>&nbsp;</div>
+            <div id="noSelector">
+                <div id="formDunamique"></div>
+            </div>
+            <div id="hasSelector">
+                <div id="invitCode">
+
+
+                    <form style="" method="get" id="voucherForm" action="$authaction">
+                        <!-- fin modif 4 -->  <!--  <form method="get" action="$authaction"> -->
+                        <input name="tok" value="$tok" type="hidden">
+                        <input name="redir" value="$redir" type="hidden">
+                        <strong>Client premium, </strong> saisir votre code : <input style="font-size:12px; height:15px" class="inputbox" id="hiddenFieldVoucher" name="voucher" size="6" type="text">&nbsp;
+                        <button class="button voucher-submit" id="hiddenSendVoucher" style="font-size:12px" type="SUBMIT">OK</button>
+                    </form>
+                    <form method="get" action="$authaction" id="tohide" style="display:none;margin-bottom:25px;">
+                        <input name="tok" value="$tok" type="hidden">
+                        <input name="redir" value="$redir" type="hidden">
+                        <input id="hotspot" name="hotspot" value="$gatewayname" type="hidden">
+                        <span id="msgemail" style="color:red; display:block"></span>
+                        <button id="btn-surf-gratuit" class="button esurf" type="submit">&gt; Cliquez ici &lt; <br>ici pour surfer gratuitement</button>
+                    </form>
+                    <br/><br/>
+
+                </div>
+                <p class="tac">
+                    <strong>Vous n'avez pas de code premium ?</strong>
+                </p>
+                <div class="invitGrey triggerForm clickable" >
+                    Se connecter à Internet en illimité, 4x plus vite et sans interruption <strong>à partir de 0<sup>,99 €</sup></strong><br/><br/>
+                    <img id="triggerForm" src="https://airzoon.pro/down-arrow.png" width="15" height="15"/>
+                    <div id="strForm" class="tal span12 dNone" style="float:none !important;">
+                        <!-- ///// TPL MESSAGE Free airZoon -->
+                        <h3 style="font-size:13px; font-weight:bold; line-height:15px"> Veuillez renseigner les différents champs pour obtenir un coupon de connexion</h3>
+
+
+                        <!-- //// TPL MESSAGE Voucher forced
+                            <h3 style="font-size:15px; font-weight:bold; line-height:15px"> Pour surfer :</h3>
+                        <p style="font-size:12px">Saisir votre code ou adressez-vous au personnel de l'établissement :</p>
+                        ///////-->
+
+                        <!-- Voucher Error messages (not found, expired, etc) will be displayed using this variable - do not remove -->
+                        <!-- This the the "Enter" button for "Voucher" networks. -->
+                        <!-- modif 4 - rajouter id="voucherForm" -->
+                        <form method="get" id="couponform">
+                            <!-- fin modif 4 -->  <!--  <form method="get" action="$authaction"> -->
+                            <input style="font-size:12px; height:17px;width:130px;" class="inputbox" id="emailcoupon" size="6" type="text" placeholder="Email"><br/><br/>
+
+                            <input style="font-size:12px; height:17px;width:130px;" class="inputbox" id="prenomcoupon" size="6" type="text" placeholder="Prénom"><br/><br/>
+                            <input style="font-size:12px; height:17px;width:130px;" class="inputbox" id="nomcoupon" size="6" type="text" placeholder="Nom"><br/><br/>
+                            <select id="dureecoupon" style="height:17px;width:139px;">
+                                <option value="">Durée de connexion</option>
+                                <option value="3">3H ( 0.99 € )</option>
+                                <option value="24">24H ( 2.99 € )</option>
+                                <option value="168">7 jours ( 9.99 € )</option>
+                                <option value="744">1 mois ( 14.99 € )</option>
+                            </select>
+                            <div style="margin-top:10px;"><span id="cbOptinComer" class="customcb ccb_unchecked"></span> <label style="font-size:10px;display:inline;">En cochant cette case , j'accepte de recevoir des offres commerciales commerçant  </label></div>
+                            <div style="margin-top:10px;"><span id="cbOptinArz" class="customcb ccb_unchecked"></span> <label style="font-size:10px;display:inline;">En cochant cette case , j'accepte de recevoir des offres commerciales de la part de airZoon et ses partenaires  </label></div>
+
+                            <br/><br/>
+                            <button class="button voucher-submit" id="preparecoupon" style="font-size:12px" >Envoyer</button><span id="waiter"></span>
+
+                        </form>
+                        <div class="dNone" id="hidedFormIframe">
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="invitGrey triggerBtConnect clickable" id="triggerFreeSurf">
+                    Se connecter en débit réduit renouvelable toutes les 30 minutes<br/><br/>
+                    <img id="triggerBtConnect" src="https://airzoon.pro/down-arrow.png" width="15" height="15"/>
+                    <button class="button dNone" id="lowconnexion" style="font-size:12px" >Se connecter</button>
+                    <div id="formDunamique" class="dNone"></div>
+
+
+                </div>
+            </div>
+
+
+            <div class="mobileonly"><p><a class="showLink" onclick="toggle_visibility('welcome');">
+                Show/Hide Welcome Message and Terms
+            </a></p></div>
+            <div id="welcome" class="welcome">
+                <strong style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">En continuant vous acceptez les conditions suivantes:</strong>
+
+
+                <div style="height: 140px; width: 97%; border: 1px solid #cccccc; overflow: auto; margin-bottom: 15px; padding: 5px;">
+                    <p><span style="font-size: 8pt;">En utilisant notre service Internet , vous reconnaissez et acceptez expressément que sont la sécurité important , la vie privée et la confidentialité des risques inhérents à l'accès ou la transmission d'informations par Internet , si la connexion est facilitée par fil ou la technologie sans fil . Les questions de sécurité comprennent, sans limitation , l'interception des transmissions , perte de données , et la mise en place ou de virus et autres programmes qui peuvent corrompre ou d'endommager votre ordinateur .</span></p>
+
+                    <div><span style="font-size: 8pt;">En conséquence , vous acceptez que le propriétaire et / ou le fournisseur de ce réseau n'est pas responsable de toute interception ou transmissions , vers informatiques ou des virus , perte de données , la corruption de fichiers , le piratage ou des dommages à votre ordinateur ou d'autres appareils qui résultent de la transmission ou télécharger des informations ou documents via le service Internet fourni .</span></div>
+
+                    <div><span style="font-size: 8pt;">L'utilisation du réseau sans fil est soumise aux restrictions générales décrites ci-dessous . Si un comportement anormal , illégal ou non autorisé est détecté , y compris une forte consommation de bande passante, le fournisseur de réseau se réserve le droit de déconnecter définitivement le dispositif incriminé à partir du réseau sans fil.</span></div>
+
+                    <div><span style="font-size: 8pt;">Exemples d'utilisation illicites</span></div>
+
+                    <div><span style="font-size: 8pt;">Ce qui suit sont des exemples représentatifs seulement et ne comprennent pas une liste exhaustive des utilisations illégales :</span></div>
+
+                    <div><span style="font-size: 8pt;">Spamming et l'invasion de la vie privée - Envoi de masse non sollicités et / ou des messages publicitaires sur Internet en utilisant le service ou l'utilisation du Service pour des activités qui envahissent vie privée d'autrui .</span></div>
+                    <div><span style="font-size: 8pt;">Propriété intellectuelle violations des droits - de s'engager dans toute activité qui viole ou détourne les droits de propriété intellectuelle de tiers, y compris les brevets , droits d'auteur , marques de commerce, marques de service, secrets commerciaux ou tout autre droit de propriété d'un tiers .</span></div>
+                    <div><span style="font-size: 8pt;">Accès illégalement ou sans autorisation des ordinateurs , des comptes , des équipements ou des réseaux appartenant à un tiers, ou de tenter de pénétrer / contourner les mesures de sécurité d'un autre système . Cela comprend toute activité qui peut être utilisé comme un signe précurseur d'une pénétration du système essayé , y compris , mais sans s'y limiter , les scans de ports , scans furtifs , ou d'autres informations collecte activité .</span></div>
+                    <div><span style="font-size: 8pt;">Le transfert de technologie , des logiciels ou d'autres matériaux en violation des lois et règlements applicables à l'exportation .</span></div>
+                    <div><span style="font-size: 8pt;">Violations de contrôle des exportations</span></div>
+                    <div><span style="font-size: 8pt;">Utilisation du service en violation de la loi et des règlements applicables , y compris , mais sans s'y limiter , la publicité , la transmission, ou de rendre les systèmes disponibles de Ponzi , des systèmes pyramidaux , charge frauduleusement des cartes de crédit , le piratage de logiciels , ou de faire des offres frauduleuses acheter ou de vendre des produits , articles ou services .</span></div>
+                    <div><span style="font-size: 8pt;">Proférer des menaces ;</span></div>
+                    <div><span style="font-size: 8pt;">Distribution de matériel pornographique à des mineurs ;</span></div>
+                    <div><span style="font-size: 8pt;">et la pornographie impliquant des enfants .</span></div>
+                    <div><span style="font-size: 8pt;">Exemples d'utilisation inacceptables</span></div>
+
+                    <div><span style="font-size: 8pt;">Ce qui suit ne sont que des exemples représentatifs et ne comportent pas une liste exhaustive des utilisations inacceptables :</span></div>
+
+                    <div><span style="font-size: 8pt;">Opérations à grande bande passante , telles que les transferts de gros fichiers et de partage de médias avec les programmes peer-to -peer ( ietorrents )</span></div>
+                    <div><span style="font-size: 8pt;">Discours obscènes ou indécents</span></div>
+                    <div><span style="font-size: 8pt;">Langue diffamatoire ou injurieux</span></div>
+                    <div><span style="font-size: 8pt;">Utilisation du service de transmettre , afficher, télécharger , ou de rendre disponible diffamatoire , harcelant, abusif , ou d'un matériau ou un langage qui encourage des lésions corporelles , la destruction de biens menaçant ou harcèle une autre .</span></div>
+                    <div><span style="font-size: 8pt;">Déformer le forgeage ou les en-têtes de message, que ce soit en tout ou en partie , pour masquer l' expéditeur du message .</span></div>
+                    <div><span style="font-size: 8pt;">Faciliter une violation de ces Conditions d'utilisation</span></div>
+                    <div><span style="font-size: 8pt;">hacking</span></div>
+                    <div><span style="font-size: 8pt;">Répartition des virus Internet , chevaux de Troie ou d'autres activités destructrices</span></div>
+                    <div><span style="font-size: 8pt;">La diffusion d'informations concernant la création et l'envoi de virus Internet , vers, chevaux de Troie, des cliquetis , des inondations, bombardement de mail , ou des attaques par déni de service . En outre , les activités qui perturbent l'utilisation ou interférer avec la capacité des autres à utiliser efficacement le noeud ou tout réseau connecté , système , service ou l'équipement .</span></div>
+                    <div><span style="font-size: 8pt;">Publicité , la transmission , ou de rendre disponible un produit logiciel , produit ou service qui est conçu pour violation des présentes Conditions d'utilisation , qui comprend la facilitation des moyens de spam, l'initiation du ping , les inondations , bombardement de mail , attaques par déni de service , et le piratage de logiciels .</span></div>
+                    <div><span style="font-size: 8pt;">La vente, le transfert ou la location du service aux clients , les clients ou d'autres tiers , soit directement, soit dans le cadre d'un service ou d'un produit créé pour la revente .</span></div>
+                    <div><span style="font-size: 8pt;">La recherche d'informations sur les mots de passe ou des données appartenant à un autre utilisateur .</span></div>
+                    <div><span style="font-size: 8pt;">Faire des copies non autorisées de logiciels propriétaires , ou d'offrir des copies non autorisées de logiciels propriétaires à d'autres.</span></div>
+                    <div><span style="font-size: 8pt;">Intercepter ou examiner le contenu des messages, des fichiers ou des communications en transit sur un réseau de données .</span></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Right Column -->
+        <div class="span8">
+            <div class="row">
+                <div class="center">
+
+                    <!-- Debut Ads zone -->
+                    <div class="ads ads-300x250" id="ad350x200">
+                        <!--/* Revive Adserver Javascript Tag v3.0.5 */-->
+                        <script type='text/javascript'>
+                            // Récupérer la bannière via l'API Revive
+                            var m3_u = (location.protocol=='https:'?'https://servedby.revive-adserver.net/ajs.php':'http://servedby.revive-adserver.net/ajs.php');
+                            var m3_r = Math.floor(Math.random()*99999999999);
+                            if (!document.MAX_used) document.MAX_used = ',';
+                            document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+                            document.write ("?zoneid=16602"); // ID de la zone où afficher la bannière
+                            document.write ('&amp;cb=' + m3_r);
+                            if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+                            document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+                            document.write ("&amp;loc=" + escape(window.location));
+                            if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+                            if (document.context) document.write ("&context=" + escape(document.context));
+                            document.write ("'><\/scr"+"ipt>");
+                        </script>
+                        <noscript>
+                            <a href='https://servedby.revive-adserver.net/ck.php?n=ab46e5e2&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'>
+                                <img src='https://servedby.revive-adserver.net/avw.php?zoneid=16896&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ab46e5e2' border='0' alt='' />
+                            </a>
+                        </noscript>
+                    </div>
+                    <!-- ADS -->
+                </div>
+                <style type="text/css">
+                    .ads.ads-300x250 {
+                        margin:         15px auto;
+                        text-align:     center;
+                        width: 300px;
+                    }
+                    .ads.ads-300x250 img {
+                        width:      100%;
+                        max-width:  300px !important;
+                        height:     auto !important;
+                    }
+
+                    .customads {
+                        margin:         15px auto;
+                        text-align:     center;
+                    }
+                    .customads img {
+                        width:      100%;
+                        max-width:  300px !important;
+                        height:     auto !important;
+                    }
+                </style>
+                <!-- Fin Ads zone -->
+
+                <!-- recuperation d'email -->
+                <div class="box1 span12" id="recupEmailBoxDroite">
+                    <h3 style="font-size:14px; line-height:18px">
+                      <span id="subscribe-offer-title"></span><br>
+                      <span id="subscribe-offer-subtitle"></span>
+                    </h3>
+                    <!-- This is the "Enter" button for "Open" networks. -->
+                    <form class="formAuthTmp" method="get" action="$authaction" id="tohide">
+                        <input name="tok" value="$tok" type="hidden">
+                        <input name="redir" value="$redir" type="hidden">
+                        <input id="hotspot" name="hotspot" value="$gatewayname" type="hidden">
+                        <span id="subscribe-offer-email-label"></span>  &nbsp;&nbsp;&nbsp;&nbsp; <input class="shortfield" type="text" name="email" id="email"><br/><br/>
+                        <span id="subscribe-offer-phone-label"></span> &nbsp; <input type="text" class="shortfield" name="mob" id="phone"><br/>
+                        <!-- modif 3 - RAJOUTER ligne + remplacer XXXX valeure ID-AIRZOON -->
+                        <input id="idmyairzoon" name="idmyairzoon" value="XXXX" type="hidden">
+                        <!-- fin modif 3 -->
+
+                        <span id="msgemail" style="color:red; display:block"></span>
+                    </form>
+                </div>
+                <!-- ///// Free airZoon button -->
+                <form method="get" action="$authaction" id="tohide" style="margin-bottom:25px;">
+                    <input name="tok" value="$tok" type="hidden">
+                    <input name="redir" value="$redir" type="hidden">
+                    <input id="hotspot" name="hotspot" value="$gatewayname" type="hidden">
+                    <span id="msgemail" style="color:red; display:block"></span>
+                    <button id="btn-surf-gratuit" class="button esurf" type="submit">&gt; <span id="free-authentification-text-part-one"></span> &lt; <br><span id="free-authentification-text-part-two"></span></span></button>
+                </form>
+                <!-- ///// END Free airZoon button -->
+                <div class="center">
+
+                    <!-- Debut Ads zone -->
+                    <div class="customads"  id="ad300x100">
+
+                    </div></div>
+                <div class="box2 span12" id="clientPremiumEncart">
+                    <!-- ///// TPL MESSAGE Free airZoon -->
+                    <h3 style="font-size:15px; font-weight:bold; line-height:15px"> <span id="znl-auth-title"></span></h3>
+                    <p style="font-size:12px"><span id="znl-auth-subtitle"></span></p>
+
+                    <!-- //// TPL MESSAGE Voucher forced -->
+                    <p class="error" style="font-size:12px;">$error_msg</p>
+                    <!-- This the the "Enter" button for "Voucher" networks. -->
+                    <form method="get" id="voucherForm" action="$authaction">
+                        <input name="tok" value="$tok" type="hidden">
+                        <input name="redir" value="$redir" type="hidden">
+                        <input style="font-size:12px; height:15px" class="inputbox" name="voucher" size="6" type="text">&nbsp;
+                        <button class="button voucher-submit" style="font-size:12px" type="SUBMIT">OK</button>
+                    </form>
+                    <p style="font-family:'Lato', sans-serif; font-size:12px; line-height:15px; margin-top: 10px;">
+                        <span id="znl-auth-text-info-part-one"></span> 
+                        <span class="red" id="znl-auth-text-info-part-two"></span> 
+                        <span id="znl-auth-text-info-part-three"></span> <br>
+                        <a href="/cdn-cgi/l/email-protection#7c0e190f0d09190f083c1d150e06131312521f1311430f091e16191f08412e191f190a13150e594e4c0912594e4c1f131819594e4c1819594e4c1f1312121904151312" target="_top">
+                            <span id="znl-auth-text-info-part-four"></span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- fin recuperation d'email -->
+            <div class="" style="background-color: #ffffff; margin-bottom: 15px; border: 0px;">
+                <div class="center">
+                    <img src="http://www.airzoon.com/img/STICKER_03_shadow-200.png" width="80" alt="">
+                    <br>
+                    <span style="font-size:12px;"><span id="subscribe-hotspot-mention-part-one">Inscrivez-vous pour</span> <strong><span id="subscribe-hotspot-mention-part-two">recevoir les nouveaux points wifi disponibles</span></strong>:</span>
+                    <br>
+                    <span class="red" style="font-weight:bold; font-size:12px">www.airZoon.com</span>
+                </div>
+            </div>
+
+            <!-- Encart publicitaire -->
+            <div class="ad-container" id="ad-container">
+                <!-- <h3 id="ad-title" style="font-size: 16px; font-weight: bold; margin-bottom: 10px;"></h3> -->
+                <!-- <p id="ad-description" style="font-size: 14px; margin-bottom: 10px;"></p> -->
+                <a id="ad-link" href="#" target="_blank">
+                    <img id="ad-image" src="" alt="Publicité" style="margin-bottom: 10px;">
+                </a>
+                <!-- <button id="ad-button" style="padding: 10px 20px; background-color: #d9383e; color: white; border: none; border-radius: 5px; cursor: pointer;">En savoir plus</button> -->
+            </div>
+        </div>
+    </div>
+    <!-- /.span -->
+</div>
+<!-- /.row -->
+<!-- Footer
+==================================================
+Customize this area however you wish -->
+<!-- /container -->
+
+<!-- /container -->
+<br>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div id="thePubPopIn">
+            <img src="https://airzoon.pro/display-perec.gif"/>
+            <div class="formAdsPopin dNone" >
+                <p class="pAds bold">Vous êtes intéressé ?<br>Laissez nous vos coordonnées</p>
+                <div class="fg-fads"><label>Prénom : </label><input class="adsInput prenomAds" id="prenomAdsPopin" type="text"></div>
+                <div class="fg-fads"><label>Email : </label><input class="adsInput emailAds" id="emailAdsPopin" type="text"></div>
+                <div class="fg-fads"><label>Mobile : </label><input class="adsInput phoneAds" id="phoneAdsPopin" type="text"></div>
+
+                <div id="contAdsButton"><button class="button btSendAdsFormPopin" style="font-size:12px">Envoyer</button></div>
+            </div>
+
+        </div>
+        <p style="width:300px;color:#FFFFFF !important;margin-top:16px;" class="tac bold colorWhite">Connexion dans <span id="counterWifi">8 secondes</span></p>
+
+    </div>
+
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+    var timerConnectIncre=8;
+    var popinDisplayed=false;
+    var timerStopped=false;
+    var keyPopin="rsu-mariejoperec";
+    var ppdisplayed=false;
+    var pptaped=false;
+    var popinIsEnabled=false;
+    var thewaiter=new anotherWaiter({_aloaderHtml:'<div class="tac"><img src="https://airzoon.pro/assets/img/simpleloader.gif"/> </div>'});
+    var waiter;
+    var STRIPE_PK;
+    var STRIPE_TRYING_PAIEMENT=false;
+    var cbComer;
+    var cbArz;
+    checkpaiementinterval=false;
+
+
+    $(document).ready(function()
+    {
+        $("#hidedForm").hide();
+        waiter=new anotherWaiter({_aloaderHtml:'<div class="tac"><img src="https://airzoon.pro/assets/img/simpleloader.gif"/> </div>'});
+        waiter2=new anotherWaiter({_aloaderHtml:'<div class="tac"><img src="https://airzoon.pro/assets/img/simpleloader.gif"/> </div>'});
+        cbComer =new boolElement
+        (
+            {
+                _id:'cbOptinComer',
+                _classTrue:'ccb_checked',
+                _classFalse:'ccb_unchecked'
+            }
+        );
+
+        cbArz =new boolElement
+        (
+            {
+                _id:'cbOptinArz',
+                _classTrue:'ccb_checked',
+                _classFalse:'ccb_unchecked'
+            }
+        );
+
+        $("#preparecoupon").click(function(event)
+        {
+            event.preventDefault();
+            waiter.show("waiter","#ffffff");
+            $.ajax({
+                type: 'POST',
+                url: "https://airzoon.pro/preparecoupon",
+                data:{email:$("#emailcoupon").val(),nom:$("#nomcoupon").val(),prenom:$("#prenomcoupon").val(),dureecoupon:$("#dureecoupon").val(),optincommer:(cbComer.currentState==false?"no":"yes"),optinarz:(cbArz.currentState==false?"no":"yes"),gateway:theIdGateway},
+                success: function(retour)
+                {
+                    waiter.hide();
+                    if(retour.result=="ok")
+                    {
+
+                        $("#hidedFormIframe").removeClass('dNone');
+                        //$("#hidedFormIframe").css("height","300px");
+                        //$("#hidedFormIframe").load('https://airzoon.pro/app_dev.php/hidedform/'+retour.stripepk+"/"+retour.id+"/"+retour.cs);
+                        var urlIf='https://airzoon.pro/hidedform/'+retour.stripepk+"/"+retour.id+"/"+retour.cs;
+                        $("#hidedFormIframe").html("<iframe height='240' style='border:none;width:100%;' src='"+urlIf+"'> </iframe>");
+                        $("#preparecoupon").hide();
+                        STRIPE_TRYING_PAIEMENT=retour.id;
+
+                        checkpaiementinterval=setInterval("checkPaiementStripe()",2000);
+
+                    }
+                    else
+                    {
+                        new Noty({
+
+                            text: retour.message,
+                            timeout:4000,
+                            type:"error"
+
+                        }).show();
+                        if(retour.errors)
+                        {
+                            for(var erreur in retour.errors)
+                            {
+                                if(retour.errors[erreur]['isValid']==false)
+                                {
+                                    //showValidate($("#"+erreur));
+                                    $("#"+erreur).addClass("is-invalid");
+                                }
+                            }
+                        }
+                    }
+
+                },
+                dataType: 'json'
+            });
+        });
+
+        $("#strForm").removeClass('dNone');
+        $("#strForm").hide();
+        $("#lowconnexion").removeClass('dNone');
+        $("#lowconnexion").hide();
+        $("#formDunamique").removeClass('dNone');
+        if($("#formDunamique").parent().attr('id')!="noSelector")
+        {
+            $("#formDunamique").hide();
+            $('.esurf').css('display','none');
+            $('#recupEmailBoxDroite').css('display','none');
+        }
+
+        $(".triggerForm").click(function()
+        {
+            $("#strForm").show(500);
+            $("#triggerForm").addClass('dNone');
+            return false;
+            if($("#strForm").hasClass('dNone'))
+            {
+                $("#strForm").removeClass('dNone');
+                $("#strForm").show();
+                $("#triggerForm").addClass('dNone');
+            }
+            else
+            {
+                //$("#strForm").addClass('dNone');
+            }
+        });
+
+        $(".triggerBtConnect").click
+        (
+            function()
+            {
+
+                //console.log($('#btn-surf-gratuit'));
+                $('.esurf').css('display','none');
+                $('#recupEmailBoxDroite').css('display','none');
+                if(needAuthent)
+                {
+                    $("#formDunamique").show(500);
+                    $("#formDunamique").css('text-align','left');
+
+                    //$("#triggerFreeSurf").append('<div id="formDunamique"></div>');
+                }
+                else
+                {
+                    $("#lowconnexion").show(500);
+                }
+
+                $("#triggerBtConnect").addClass('dNone');
+            }
+        );
+
+        $("#lowconnexion").click(function()
+        {
+            thewaiter.show("lowconnexion","#FFFFFF");
+            $("#btn-surf-gratuit").trigger('click');
+        });
+
+        if(formCasContactDisplayed !== undefined && formCasContactDisplayed)
+        {
+            $(".classCovidRestoForm").removeClass('dNone');
+        }
+
+        $('#cbconsentcovid').click(function()
+        {
+            if($(this).attr('ischecked')=="no")
+            {
+                $(this).attr('ischecked',"yes");
+            }
+            else
+            {
+                $(this).attr('ischecked',"no");
+            }
+        });
+
+        $('#cbconsentmarket').click(function()
+        {
+            if($(this).attr('ischecked')=="no")
+            {
+                $(this).attr('ischecked',"yes");
+            }
+            else
+            {
+                $(this).attr('ischecked',"no");
+            }
+        });
+
+        $("#tohide").submit(function(event)
+        {
+
+            if(popinIsEnabled)
+            {
+                if(!popinDisplayed)
+                {
+                    event.preventDefault();
+                    if(!ppdisplayed)
+                    {logpa('DISPLAY');ppdisplayed=true;}
+                    $("#myModal").css('display','block');
+                    setInterval("timerConnect()",1000);
+                    return false;
+                }
+                else
+                {
+
+                }
+            }
+
+
+
+        });
+
+
+
+        $(".warningcovid").click(function()
+        {
+
+            if($("#formCovidResto").hasClass('dNone'))
+            {
+                $("#formCovidResto").removeClass('dNone');
+            }
+            else
+            {
+                $("#formCovidResto").addClass('dNone');
+            }
+        });
+        $("#thePubPopIn").click(function()
+        {
+            timerStopped=true;
+            $(".formAdsPopin").removeClass('dNone');
+            $(".formAdsPopin").animate({opacity:1});
+            if(!pptaped)
+            {logpa('TAP');pptaped=true;}
+
+        });
+
+        $("#btn-surf-gratuit").click(function(event)
+        {
+            event.preventDefault();
+            thewaiter.show("btn-surf-gratuit","#FFFFFF");
+            return true;
+        });
+        $("#submitresto").click(function()
+        {
+
+            var optinmarket="oui";
+            if($("#cbconsentmarket").attr('ischecked')=="no")
+            {
+                optinmarket="non";
+            }
+            if($("#cbconsentcovid").attr('ischecked')=="no")
+            {
+                new Noty({
+                    text: "Pour soumettre ces informations ,veuillez cocher la case de consentement",
+                    timeout:4000,
+                    type:"error"
+                }).show();
+                return false;
+            }
+
+            var sentDatas={
+                idgateway:theIdGateway,
+                prenom:$("#prenomclientcovid").val(),
+                nom:$("#nomclientcovid").val(),
+                phone:$("#phoneclientcovid").val(),
+                mail:$("#mailclientcovid").val(),
+                optionmarket:optinmarket
+            };
+
+
+
+            thewaiter.show("waitcovid","#FFFFFF");
+            $(".cvfield").removeClass('is-invalid');
+            $.ajax({
+                type: 'POST',
+                url: "https://airzoon.pro/save-client-covid",
+                data:sentDatas,
+                /*{
+                 idgateway:"a527702f7f45fe39fdbf3a314ea379f9",
+                 utm_campaign:key,
+                 nom:customGetValue('nomAds'),
+                 prenom:customGetValue('prenomAds'),
+                 email:customGetValue('emailAds'),
+                 phone:customGetValue('phoneAds')
+                 },*/
+                success: function(retour)
+                {
+                    thewaiter.hide();
+                    if(retour.result=="ok")
+                    {
+
+                        new Noty({
+                            text: "Nous avons bien reçu vos coordonnées, merci de votre collaboration.",
+                            timeout:4000,
+                            type:"success"
+                        }).show();
+                        $(".cvfield").val('');
+                        $("#formCovidResto").addClass('dNone');
+                        //$(".boxFormCovid").html('<a href="'+retour.urlpdf+'">Télécharger mon récépissé</a>');
+
+                    }
+                    else
+                    {
+                        var messageRetour=retour.message;
+                        if(retour.errors)
+                        {
+                            for(var erreur in retour.errors)
+                            {
+                                if(retour.errors[erreur]['isValid']==false)
+                                {
+                                    //showValidate($("#"+erreur));
+                                    $("#"+erreur).addClass("is-invalid");
+                                }
+                            }
+                        }
+                        new Noty({
+                            text: messageRetour,
+                            timeout:4000,
+                            type:"error"
+                        }).show();
+                    }
+                },
+                dataType: 'json'
+            });
+        });
+
+        $(".btSendAdsFormPopin").click(function()
+        {
+
+
+            $('.adsInput').removeClass('is-invalid');
+            //console.log(customGetValue('nomAds'));
+            var sentDatas={
+                idgateway:"a527702f7f45fe39fdbf3a314ea379f9",
+                utm_campaign:keyPopin};
+
+
+            sentDatas.prenom=$('#prenomAdsPopin').val();
+            sentDatas.email=$('#emailAdsPopin').val();
+            sentDatas.phone=$('#phoneAdsPopin').val();
+
+
+
+            $.ajax({
+                type: 'POST',
+                url: "https://airzoon.pro/save-lead",
+                data:sentDatas,
+                /*{
+                 idgateway:"a527702f7f45fe39fdbf3a314ea379f9",
+                 utm_campaign:key,
+                 nom:customGetValue('nomAds'),
+                 prenom:customGetValue('prenomAds'),
+                 email:customGetValue('emailAds'),
+                 phone:customGetValue('phoneAds')
+                 },*/
+                success: function(retour)
+                {
+                    if(retour.result=="ok")
+                    {
+                        //setTimeout('checkResponse2()',7000);
+                        formAdsSent=true;
+                        $('.adsInput').val('');
+                        new Noty({
+                            text: "Votre demande a bien été envoyée",
+                            timeout:4000,
+                            type:"success"
+                        }).show();
+                        $(".formAdsPopin").animate({opacity:0});
+                        timerStopped=false;
+
+                    }
+                    else
+                    {
+                        var messageRetour=retour.message;
+                        if(retour.errors)
+                        {
+                            for(var erreur in retour.errors)
+                            {
+                                if(retour.errors[erreur]['isValid']==false)
+                                {
+                                    //showValidate($("#"+erreur));
+                                    $("#"+erreur+"AdsPopin").addClass("is-invalid");
+                                }
+                            }
+                        }
+                        new Noty({
+                            text: messageRetour,
+                            timeout:4000,
+                            type:"error"
+                        }).show();
+                    }
+                },
+                dataType: 'json'
+            });
+        });
+
+    });
+
+    function timerConnect()
+    {
+        if(!timerStopped)
+        {
+            if(timerConnectIncre>0)
+            {
+                $("#counterWifi").html(timerConnectIncre+" secondes");
+                timerConnectIncre--;
+            }
+            else
+            {
+                popinDisplayed=true;
+                $("#tohide").submit();
+
+
+
+            }
+        }
+
+
+    }
+
+    function goconnect()
+    {
+        $("#hiddenSendVoucher").trigger('click');
+    }
+
+    function timerConnect()
+    {
+
+    }
+    function checkPaiementStripe()
+    {
+        $.ajax({
+            type: 'POST',
+            url: "https://airzoon.pro/checkpaiementstripe/"+STRIPE_TRYING_PAIEMENT,
+            data:{},
+            success: function(retour)
+            {
+                //waiter.hide();
+                //waiter2.hide();
+                if(retour.result=="ok")
+                {
+                    createCouponV2();
+                    clearInterval(checkpaiementinterval);
+                }
+
+
+            },
+            dataType: 'json'
+        });
+    }
+
+    function createCouponV2()
+    {
+
+        $.ajax({
+            type: 'POST',
+            url: "https://airzoon.pro/getpaidvoucher",
+            data:{nom:$("#nomcoupon").val(),prenom:$("#prenomcoupon").val(),email:$("#emailcoupon").val(),dureecoupon:$("#dureecoupon").val(),gateway:theIdGateway},
+            success: function(retour)
+            {
+                //waiter.hide();
+                //waiter2.hide();
+                if(retour.result=="ok")
+                {
+                    $("#hiddenFieldVoucher").val(retour.code);
+
+                    new Noty({
+
+                        text: retour.message,
+                        timeout:4000,
+                        type:"success"
+
+                    }).show();
+                    setTimeout('goconnect()',4000);
+                }
+                else
+                {
+                    new Noty({
+
+                        text: retour.message,
+                        timeout:4000,
+                        type:"error"
+
+                    }).show();
+                    if(retour.errors)
+                    {
+                        for(var erreur in retour.errors)
+                        {
+                            if(retour.errors[erreur]['isValid']==false)
+                            {
+                                //showValidate($("#"+erreur));
+                                $("#"+erreur).addClass("is-invalid");
+                            }
+                        }
+                    }
+                    waiter.hide();
+                }
+
+            },
+            dataType: 'json'
+        });
+    }
+
+    function logpa(type)
+    {
+        console.log(type);
+
+        $.ajax({
+            type: 'POST',
+            url: "https://airzoon.pro/log_popinads",
+            data:{key:keyPopin,type},
+            success: function(retour) {},
+            dataType: 'json'
+        });
+    }
+
+    /** @constructor boolElement*/
+    function boolElement(_options)
+    {
+        var current=this;
+
+////////////////////PROPERTIES/////////////////////////
+
+        /**
+         *
+         */
+        this.currentState=false;
+
+
+////////////////////METHODS/////////////////////////
+        /**
+         *
+         */
+        this.setState=function(thestate)
+        {
+            if(thestate)
+            {
+                $("#"+current.id).removeClass(current.classFalse);
+                $("#"+current.id).addClass(current.classTrue);
+            }
+            else
+            {
+                $("#"+current.id).removeClass(current.classTrue);
+                $("#"+current.id).addClass(current.classFalse);
+            }
+            current.currentState=thestate;
+        };
+
+
+////////////////////AFFECTATION/////////////////////////
+        var options;//objject that contains all the parameters
+        if (_options == null)
+        {
+            options=
+                {
+                    _id:'something',
+                    _classTrue:'something',
+                    _classFalse:'something'
+
+                };
+        }
+        else
+        {
+            options=_options;
+        }
+        this.id=options._id;
+        this.classTrue=options._classTrue;
+        this.classFalse=options._classFalse;
+
+        $("#"+current.id).css("cursor","pointer");
+        $("#"+current.id).click(function()
+        {
+            if(current.currentState)
+            {
+                current.setState(false);
+            }
+            else
+            {
+                current.setState(true);
+            }
+        });
+        current.setState(false);
+
+
+
+    }
+</script>
+
+<!-- Encart publicitaire -->
+<div class="ad-container" id="ad-container">
+    <h3 id="ad-title" style="font-size: 16px; font-weight: bold; margin-bottom: 10px;"></h3>
+    <p id="ad-description" style="font-size: 14px; margin-bottom: 10px;"></p>
+    <a id="ad-link" href="#" target="_blank">
+        <img id="ad-image" src="" alt="Publicité" style="margin-bottom: 10px;">
+    </a>
+    <button id="ad-button" style="padding: 10px 20px; background-color: #d9383e; color: white; border: none; border-radius: 5px; cursor: pointer;" target="_blank">En savoir plus</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch("http://localhost:5000/ads")
+            .then(response => response.json())
+            .then(data => {
+                if (data.ads.length > 0) {
+                    const randomAd = data.ads[Math.floor(Math.random() * data.ads.length)];
+                    document.getElementById("ad-image").src = randomAd.image;
+                    document.getElementById("ad-link").href = randomAd.link;
+                    document.getElementById("ad-title").textContent = randomAd.title;
+                    document.getElementById("ad-description").textContent = randomAd.description;
+                    document.getElementById("ad-button").onclick = () => window.open(randomAd.link, '_blank');
+                    document.getElementById("ad-container").style.display = "block";
+                } else {
+                    document.getElementById("ad-container").style.display = "none";
+                }
+            })
+            .catch(error => console.error("Erreur lors du chargement des pubs :", error));
+    });
+</script>
+
+</body></html>
