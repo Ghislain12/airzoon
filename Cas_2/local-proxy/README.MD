@@ -50,6 +50,17 @@ Ce projet a pour but de servir des pages d'accueil Wi-Fi (splash pages) dynamiqu
 4. **Accès à la Splash Page** :
    - Ouvrez un navigateur et accédez à `http://localhost:5000` pour voir la splash page avec les publicités dynamiques.
 
+
+   **Capture d'écran du rendu**
+    - Exemple 1
+
+   ![alt text](./FireShot%20Capture%20016%20-%20$gatewayname%20-%20[localhost].png)
+
+   - Exemple 2
+   ![alt text](./FireShot%20Capture%20017%20-%20$gatewayname%20-%20[localhost].png)
+
+
+
 ## Personnalisation et Extension
 
 - **Ajout de Publicités** : Vous pouvez ajouter de nouvelles publicités dans le tableau `ads` dans `proxy.js`.
@@ -59,3 +70,5 @@ Ce projet a pour but de servir des pages d'accueil Wi-Fi (splash pages) dynamiqu
 ## Remarques
 
 - Assurez-vous que le serveur est en cours d'exécution et que l'API des publicités est accessible pour que les encarts s'affichent correctement.
+
+
